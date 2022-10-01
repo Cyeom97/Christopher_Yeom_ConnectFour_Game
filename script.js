@@ -1,7 +1,9 @@
+// connect to the game html
 const score = document.querySelector('.score')
 const token = document.querySelectorAll('spot')
+// for the for loop
 let gameRun = true
-let playerRed = 'red'
+let player = 'red'
 let currentGameState = []
 let winningProb = [
   [0, 1, 2, 3],
@@ -76,3 +78,26 @@ let winningProb = [
   [41, 34, 27, 20],
   [41, 40, 39, 38]
 ]
+
+// functions
+
+const whoseTurn = () => `${player}'s turn`
+score.innerHTML = changePlayer()
+function changePlayer() {
+  if (player === 'red') {
+    player = 'yellow'
+    score.innerHTML = changePlayer()
+  } else {
+    player = 'red'
+    score.innerHTML = changePlayer()
+  }
+}
+function chosenSpot(pickedSpot) {
+  const pick = pickedSpot.target
+  const spotNum = pick.getAttribute('data-spot-number')
+  if (currentGameState[spotNum] != '') {
+    return
+  }
+}
+
+token.forEach((circle) => circle.addEventListener('click', chosenSpot))
