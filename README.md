@@ -42,6 +42,7 @@ The objective of the game is the first player to create a line of four from thei
 - First you need to create two html files: index.html to link to the web, and I created another called game.html.
 - You need to use two html files so you can link and navigate through them.
 - In each HTML file, I used a common boilerplate to create a baseline.
+- The index.html is used as a display page. To welcome users to my page. There is a play button in the bottom that when clicked, it directs to the game.html where you can play the game
 
 #### _CSS_
 
