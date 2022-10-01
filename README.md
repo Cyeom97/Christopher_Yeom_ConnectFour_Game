@@ -2,7 +2,10 @@
 
 ## By: Christopher Yeom
 
+### Checkout the links to my Github and Trello Board
+
 [Github](https://github.com/Cyeom97/ConnectFour_Game)
+[Trello Project Board](https://trello.com/invite/b/s9xkhMOw/f2959833df3fe380ad04f3c84578a531/christopher-yeom-connect4)
 
 ---
 
