@@ -43,3 +43,23 @@ section {
 .score {
     font-size: 40px;
 }
+
+.display-title {
+    font-size: 60px;
+    color:rgb(42, 83, 100);
+}
+
+.display-message {
+    font-size: 30px;
+    margin-top: 10%;
+    color: rgb(163, 160, 160);
+}
+
+.play {
+    font-size: 40px;
+    text-decoration: none;
+    margin: 25px auto;
+    color: rgb(158, 158, 14);
+    position: relative;
+    top: 50px;
+}
