@@ -1,0 +1,31 @@
+body {
+    background-color: white;
+}
+
+section {
+    text-align: center;
+}
+
+.title {
+    font-size: 70px;
+    margin: 10px auto;
+    color: rgb(42, 83, 100);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(7,auto);
+    width: 250px;
+    margin: 10px auto;
+    color: red;
+    border: 5px solid blue;
+}
+
+.spot {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    font-size: 60px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
