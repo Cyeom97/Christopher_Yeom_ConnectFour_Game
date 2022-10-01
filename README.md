@@ -14,6 +14,8 @@
 
 Connect 4 is a two player game where a players take turns dropping colored spots into a seven column, six row grid. Starting from the bottom, making it's way up top by stacking.
 
+![Connect 4 GIF](https://user-images.githubusercontent.com/39765499/56462040-26ef7080-63b4-11e9-8f5a-7f0b4dec216d.gif)
+
 ## **The Objective**
 
 ---
@@ -36,11 +38,13 @@ The objective of the game is the first player to create a line of four from thei
 
 - First you need to create two html files: index.html to link to the web, and I created another called game.html.
 - You need to use two html files so you can link and navigate through them.
+- In each HTML file, I used a common boilerplate to create a baseline.
 
 #### _CSS_
 
-- A CSS file called styles.css is needed in order to style up your game. This is where people can see how game looks like
+- A CSS file called styles.css is needed in order to style up your game. This is where people can see how game looks like.
 
 #### _JavaScript_
 
 - As I mentioned CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
+- I created a js file called script.js and this is where I will make the game come alive by calling variables, functions, and event listeners.
