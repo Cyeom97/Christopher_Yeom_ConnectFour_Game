@@ -33,8 +33,6 @@ The objective of the game is the first player to create a line of four from thei
 
 ## **How to create the game using code**
 
----
-
 ### HTML CSS JS
 
 #### _HTML_
@@ -42,15 +40,15 @@ The objective of the game is the first player to create a line of four from thei
 - First you need to create two html files: index.html to link to the web, and I created another called game.html.
 - You need to use two html files so you can link and navigate through them.
 - In each HTML file, I used a common boilerplate to create a baseline.
-- The index.html is used as a display page. To welcome users to my page. There is a play button in the bottom that when clicked, it directs to the game.html where you can play the game
+- The index.html is used as a display page to welcome users to my page. There is a play button in the bottom that when clicked, it directs to the game.html where you can play the game
 
 #### _CSS_
 
-- A CSS file called styles.css is needed in order to style up your game. This is where people can see how game looks like.
+- A CSS file called styles.css was created. It is needed in order to style up your game. This is where people can see how the game looks like.
 
 #### _JavaScript_
 
-- As I mentioned CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
+- As I mentioned that CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
 - I created a js file called script.js and this is where I will make the game come alive by calling variables, functions, and event listeners.
 
 ---
