@@ -63,7 +63,7 @@ section {
     cursor: pointer;
 }
 
-.score {
+.message {
     position: relative;
     bottom: 10px;
     font-size: 40px;

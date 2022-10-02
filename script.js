@@ -1,10 +1,53 @@
 // connect to the game html
-const score = document.querySelector('.score')
-const token = document.querySelectorAll('spot')
+const score = document.querySelector('.message')
+const token = document.querySelectorAll('.spot')
 // for the for loop
 let gameRun = true
 let player = 'red'
-let currentGameState = []
+let currentGameState = [
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  ''
+]
 let winningProb = [
   [0, 1, 2, 3],
   [0, 7, 14, 21],
@@ -82,22 +125,32 @@ let winningProb = [
 // functions
 
 const whoseTurn = () => `${player}'s turn`
-score.innerHTML = changePlayer()
+
 function changePlayer() {
   if (player === 'red') {
     player = 'yellow'
-    score.innerHTML = changePlayer()
+    // token.style.backgroundColor = 'yellow'
+    console.log('hi')
   } else {
     player = 'red'
-    score.innerHTML = changePlayer()
+    // token.style.backgroundColor = 'red'
+    console.log('hey')
   }
 }
+
+score.innerHTML = changePlayer()
 function chosenSpot(pickedSpot) {
   const pick = pickedSpot.target
-  const spotNum = pick.getAttribute('data-spot-number')
+  const spotNum = pick.getAttribute('data-spot-num')
   if (currentGameState[spotNum] != '') {
     return
   }
+  pickASpot(pick, spotNum)
+}
+
+function pickASpot(pick, spotNum) {
+  currentGameState[spotNum] = player
+  pick.innerHTML = player
 }
 
 token.forEach((circle) => circle.addEventListener('click', chosenSpot))
