@@ -41,6 +41,10 @@ The objective of the game is the first player to create a line of four from thei
 - You need to use two html files so you can link and navigate through them.
 - In each HTML file, I used a common boilerplate to create a baseline.
 - The index.html is used as a display page to welcome users to my page. There is a play button in the bottom that when clicked, it directs to the game.html where you can play the game
+- For the index.html, or my display page, I made it really simple by adding a title called "Welcome to my page". Then underneath I wrote a question if the user would like to play Connect 4.
+  -Then I created an a tag which displays the word "Play". This is crucial in order to link my index.html to my game.html.
+- The "Play" message is an a tag with an href of game.html. So you are able to click the play message and it would transfer to the game.html so the user can play the Connect 4 game.
+  -In the game.html,
 
 #### _CSS_
 
