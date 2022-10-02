@@ -41,14 +41,29 @@ The objective of the game is the first player to create a line of four from thei
 - You need to use two html files so you can link and navigate through them.
 - In each HTML file, I used a common boilerplate to create a baseline.
 - The index.html is used as a display page to welcome users to my page. There is a play button in the bottom that when clicked, it directs to the game.html where you can play the game
-- For the index.html, or my display page, I made it really simple by adding a title called "Welcome to my page". Then underneath I wrote a question if the user would like to play Connect 4.
-  -Then I created an a tag which displays the word "Play". This is crucial in order to link my index.html to my game.html.
+- For the index.html, or my display page, I made it really simple by adding a title with an h1 tag called "Welcome to my page". Then underneath I wrote a question if the user would like to play Connect 4.
+- Then I created an a tag which displays the word "Play". This is crucial in order to link my index.html to my game.html.
 - The "Play" message is an a tag with an href of game.html. So you are able to click the play message and it would transfer to the game.html so the user can play the Connect 4 game.
-  -In the game.html,
+- In the game.html, I had a similar layout where there is a h1 title but this one is called "Connect 4".
+- Then underneath, I put a h2 tag with a message that would show who's turn it would be. With the combination of js, the message changes everytime a player's turn switches.
+- Then I would display a message to the right side of the page that would keep track of the game record to see the win, loss, and tie score.
+- I also put 42 div tags inside a parent div tag with the class "board".
+- This is to create the board. There are 42 spots where a token can fit in so that is why I need 42 div tags.
+- I also used a data attribute to make sure each child div tag is specific. This is crucial so the javascript knows when a certain spot is clicked, the proper colored token will appear.
+- Finally I will but a restart button below the board to allow players to restart the game once a game has ended.
 
 #### _CSS_
 
 - A CSS file called styles.css was created. It is needed in order to style up your game. This is where people can see how the game looks like.
+- To style up the index.html, I set the background color to a darker shade. Then for the font colors of the h1, h2, and a tag, I used complimentary colors of pink. Then I aligned all the tags in the center of the page.
+- For the game.html file, I set the same background color the same as the index.html. As well as keeping the font color the same with the h1 tag and centering everything.
+- For the game board, there are 7 columns and 6 rows. So the format I used was:
+  - display as grid
+  - grid-template-column: repeat(7, auto)
+  - grid-template-row: repeat(6, auto)
+- I made the colors the same as what the original connect 4 colors were so I set the background color to blue.
+- For each specific spot I needed to create a circle so I used border-radius: 50% as well as making sure the width and height are the same size.
+- Then I made sure whenever the cursor is on a spot, the cursor turns into a pointer to indicate that the spot can be clicked.
 
 #### _JavaScript_
 
