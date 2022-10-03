@@ -123,3 +123,15 @@ let winningProb = [
 ]
 
 // functions
+
+for (let i = 0; i < token.length; i++) {
+  token[i].addEventListener('click', function () {
+    if (player === 'red') {
+      player = 'yellow'
+      return (token[i].style.backgroundColor = 'red')
+    } else {
+      player = 'red'
+      return (token[i].style.backgroundColor = 'yellow')
+    }
+  })
+}
