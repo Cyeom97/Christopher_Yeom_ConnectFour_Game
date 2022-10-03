@@ -4,6 +4,7 @@ const token = document.querySelectorAll('.spot')
 // for the for loop
 let gameRun = true
 let player = 'red'
+let array = []
 let currentGameState = [
   '',
   '',
@@ -124,16 +125,23 @@ let winningProb = [
 
 // functions
 
-for (let i = 0; i < token.length; i++) {
-  token[i].addEventListener('click', function () {
-    if (player === 'red') {
-      player = 'yellow'
-      score.innerHTML = "Yellow's turn"
-      return (token[i].style.backgroundColor = 'red')
-    } else {
-      player = 'red'
-      score.innerHTML = "Red's turn"
-      return (token[i].style.backgroundColor = 'yellow')
-    }
-  })
+const changeTurns = () => {
+  for (let i = 0; i < token.length; i++) {
+    token[i].addEventListener('click', function () {
+      if (player === 'red') {
+        player = 'yellow'
+        score.innerHTML = "Yellow's turn"
+        token[i].classList.add('red')
+        console.log(token[i])
+        return (token[i].style.backgroundColor = 'red')
+      } else {
+        player = 'red'
+        score.innerHTML = "Red's turn"
+        token[i].classList.add('yellow')
+        console.log(token[i])
+        return (token[i].style.backgroundColor = 'yellow')
+      }
+    })
+  }
 }
+changeTurns()
