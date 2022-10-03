@@ -71,6 +71,15 @@ The objective of the game is the first player to create a line of four from thei
 
 - As I mentioned previously that CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
 - I created a js file called script.js and this is where I will make the game come alive by calling variables, functions, and event listeners.
+  - **Variables:**
+  1. I created a score variable and a token variable that is linked to the message h2 tag and every div tag with the class of "spot"
+  2. I created a gameRun variable and set it to true so whenever I use functions, I would set the gameRun to false to end the game.
+  3. I created a player variable so I could change players in a function.
+  4. I then created a winningProb variable in an array. In this array, I listed every winning combination in the game.
+  - **For Loop:**
+  1.  I needed to make sure that when I click a specific spot, it not only shows a color, but it changes color after each click.
+  2.  To do this, I used a for loop. Inside the for loop, I created an event listener function.
+  3.  Then inside the event listener, I wrote an if statement. The if statment concludes that when a spot is clicked, the color would change to either red or yellow, depending on the player. Then the next click would be the opposite as it is determined that the turn has changed.
 
 ---
 

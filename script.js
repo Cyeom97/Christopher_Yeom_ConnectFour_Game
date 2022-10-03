@@ -128,9 +128,11 @@ for (let i = 0; i < token.length; i++) {
   token[i].addEventListener('click', function () {
     if (player === 'red') {
       player = 'yellow'
+      score.innerHTML = "Yellow's turn"
       return (token[i].style.backgroundColor = 'red')
     } else {
       player = 'red'
+      score.innerHTML = "Red's turn"
       return (token[i].style.backgroundColor = 'yellow')
     }
   })
