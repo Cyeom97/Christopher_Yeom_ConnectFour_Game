@@ -123,34 +123,3 @@ let winningProb = [
 ]
 
 // functions
-
-const whoseTurn = () => `${player}'s turn`
-
-function changePlayer() {
-  if (player === 'red') {
-    player = 'yellow'
-    // token.style.backgroundColor = 'yellow'
-    console.log('hi')
-  } else {
-    player = 'red'
-    // token.style.backgroundColor = 'red'
-    console.log('hey')
-  }
-}
-
-score.innerHTML = changePlayer()
-function chosenSpot(pickedSpot) {
-  const pick = pickedSpot.target
-  const spotNum = pick.getAttribute('data-spot-num')
-  if (currentGameState[spotNum] != '') {
-    return
-  }
-  pickASpot(pick, spotNum)
-}
-
-function pickASpot(pick, spotNum) {
-  currentGameState[spotNum] = player
-  pick.innerHTML = player
-}
-
-token.forEach((circle) => circle.addEventListener('click', chosenSpot))
