@@ -1,57 +1,8 @@
-// connect to the game html
 const score = document.querySelector('.message')
-const token = document.querySelectorAll('.spot')
-const data = document.querySelectorAll('[data-spot-num]')
+const token = document.querySelectorAll('.board div')
 const restartBtn = document.querySelector('.restart-game')
-// for the for loop
-let gameRun = false
+let gameRun = true
 let player = 'red'
-let arrayOne = ''
-let arrayTwo = []
-let currentGameState = [
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  ''
-]
 const winningProb = [
   [0, 1, 2, 3],
   [0, 7, 14, 21],
@@ -131,18 +82,25 @@ const winningProb = [
 const changeTurns = () => {
   for (let i = 0; i < token.length; i++) {
     token[i].addEventListener('click', function () {
-      if (player === 'red') {
-        player = 'yellow'
-        score.innerHTML = "Yellow's turn"
-        token[i].classList.add('red')
-        currentGameState.splice(i, 1, data[i])
-        token[i].style.backgroundColor = 'red'
-      } else if ((player = 'yellow')) {
-        player = 'red'
-        score.innerHTML = "Red's turn"
-        token[i].classList.add('yellow')
-        currentGameState.splice(i, 1, data[i])
-        token[i].style.backgroundColor = 'yellow'
+      if (
+        token[i + 7].classList.contains('filled') &&
+        !token[i].classList.contains('filled')
+      ) {
+        if (player === 'red') {
+          player = 'yellow'
+          score.innerHTML = "Yellow's turn"
+          token[i].classList.add('filled')
+          token[i].classList.add('red')
+          token[i].style.backgroundColor = 'red'
+        } else if ((player = 'yellow')) {
+          player = 'red'
+          score.innerHTML = "Red's turn"
+          token[i].classList.add('filled')
+          token[i].classList.add('yellow')
+          token[i].style.backgroundColor = 'yellow'
+        }
+      } else {
+        score.innerHTML = 'Did you pick the correct spot?'
       }
       let winner = false
       for (let a = 0; a < winningProb.length; a++) {
@@ -156,25 +114,27 @@ const changeTurns = () => {
           two.style.backgroundColor === 'red' &&
           three.style.backgroundColor === 'red'
         ) {
-          score.innerHTML = 'Red wins'
+          score.innerHTML = 'Red wins!'
+          token[i].disabled = true
           winner = true
-          gameRun = true
+          gameRun = false
+          return
         } else if (
           zero.style.backgroundColor === 'yellow' &&
           one.style.backgroundColor === 'yellow' &&
           two.style.backgroundColor === 'yellow' &&
           three.style.backgroundColor === 'yellow'
         ) {
-          score.innerHTML = 'Yellow wins'
+          score.innerHTML = 'Yellow wins!'
+          token[i].disabled = true
           winner = true
-          gameRun = true
-        }
-        if (winner === true) {
-          reset()
+          gameRun = false
+          return
         }
       }
     })
   }
+  reset()
 }
 function reset() {
   restartBtn.addEventListener('click', function () {
