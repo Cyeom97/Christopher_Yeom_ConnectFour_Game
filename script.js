@@ -2,55 +2,12 @@
 const score = document.querySelector('.message')
 const token = document.querySelectorAll('.spot')
 const data = document.querySelectorAll('[data-spot-num]')
+const restartBtn = document.querySelector('.restart-game')
 // for the for loop
-let gameRun = true
+let gameRun = false
 let player = 'red'
 let arrayOne = ''
 let arrayTwo = []
-let currentGameStateTwo = [
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  ''
-]
 let currentGameState = [
   '',
   '',
@@ -180,15 +137,14 @@ const changeTurns = () => {
         token[i].classList.add('red')
         currentGameState.splice(i, 1, data[i])
         token[i].style.backgroundColor = 'red'
-        // console.log(currentGameState)
       } else if ((player = 'yellow')) {
         player = 'red'
         score.innerHTML = "Red's turn"
         token[i].classList.add('yellow')
-        arrayOne = currentGameStateTwo.splice(i, 1, data[i])
+        currentGameState.splice(i, 1, data[i])
         token[i].style.backgroundColor = 'yellow'
-        // console.log(currentGameStateTwo)
       }
+      let winner = false
       for (let a = 0; a < winningProb.length; a++) {
         const zero = token[winningProb[a][0]]
         const one = token[winningProb[a][1]]
@@ -201,6 +157,8 @@ const changeTurns = () => {
           three.style.backgroundColor === 'red'
         ) {
           score.innerHTML = 'Red wins'
+          winner = true
+          gameRun = true
         } else if (
           zero.style.backgroundColor === 'yellow' &&
           one.style.backgroundColor === 'yellow' &&
@@ -208,10 +166,20 @@ const changeTurns = () => {
           three.style.backgroundColor === 'yellow'
         ) {
           score.innerHTML = 'Yellow wins'
+          winner = true
+          gameRun = true
+        }
+        if (winner === true) {
+          reset()
         }
       }
     })
   }
+}
+function reset() {
+  restartBtn.addEventListener('click', function () {
+    window.location.reload()
+  })
 }
 
 changeTurns()
