@@ -1,10 +1,56 @@
 // connect to the game html
 const score = document.querySelector('.message')
 const token = document.querySelectorAll('.spot')
+const data = document.querySelectorAll('[data-spot-num]')
 // for the for loop
 let gameRun = true
 let player = 'red'
-let array = []
+let arrayOne = ''
+let arrayTwo = []
+let currentGameStateTwo = [
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  ''
+]
 let currentGameState = [
   '',
   '',
@@ -49,7 +95,7 @@ let currentGameState = [
   '',
   ''
 ]
-let winningProb = [
+const winningProb = [
   [0, 1, 2, 3],
   [0, 7, 14, 21],
   [0, 8, 16, 24],
@@ -132,16 +178,40 @@ const changeTurns = () => {
         player = 'yellow'
         score.innerHTML = "Yellow's turn"
         token[i].classList.add('red')
-        console.log(token[i])
-        return (token[i].style.backgroundColor = 'red')
-      } else {
+        currentGameState.splice(i, 1, data[i])
+        token[i].style.backgroundColor = 'red'
+        // console.log(currentGameState)
+      } else if ((player = 'yellow')) {
         player = 'red'
         score.innerHTML = "Red's turn"
         token[i].classList.add('yellow')
-        console.log(token[i])
-        return (token[i].style.backgroundColor = 'yellow')
+        arrayOne = currentGameStateTwo.splice(i, 1, data[i])
+        token[i].style.backgroundColor = 'yellow'
+        // console.log(currentGameStateTwo)
+      }
+      for (let a = 0; a < winningProb.length; a++) {
+        const zero = token[winningProb[a][0]]
+        const one = token[winningProb[a][1]]
+        const two = token[winningProb[a][2]]
+        const three = token[winningProb[a][3]]
+        if (
+          zero.style.backgroundColor === 'red' &&
+          one.style.backgroundColor === 'red' &&
+          two.style.backgroundColor === 'red' &&
+          three.style.backgroundColor === 'red'
+        ) {
+          score.innerHTML = 'Red wins'
+        } else if (
+          zero.style.backgroundColor === 'yellow' &&
+          one.style.backgroundColor === 'yellow' &&
+          two.style.backgroundColor === 'yellow' &&
+          three.style.backgroundColor === 'yellow'
+        ) {
+          score.innerHTML = 'Yellow wins'
+        }
       }
     })
   }
 }
+
 changeTurns()
