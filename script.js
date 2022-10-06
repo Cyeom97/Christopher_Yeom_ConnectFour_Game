@@ -83,6 +83,7 @@ const changeTurns = () => {
   for (let i = 0; i < token.length; i++) {
     token[i].addEventListener('click', function () {
       if (
+        // try === instead of contains also try failed attempts
         token[i + 7].classList.contains('filled') &&
         !token[i].classList.contains('filled')
       ) {
@@ -136,6 +137,7 @@ const changeTurns = () => {
   }
   reset()
 }
+// Work on the reset button
 function reset() {
   restartBtn.addEventListener('click', function () {
     window.location.reload()

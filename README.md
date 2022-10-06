@@ -46,7 +46,6 @@ The objective of the game is the first player to create a line of four from thei
 - The "Play" message is an "a" tag with a href of game.html. Therefore the user can click the play message and it would transfer to the game.html so the user can play the Connect 4 game.
 - In the game.html, I had a similar layout where there is a h1 title but this one is called "Connect 4".
 - Then underneath, I put a h2 tag with a message that would show who's turn it would be. With the combination of js, the message changes everytime a player's turn switches.
-- Then I would display a message on the right side of the page that would keep track of the game record to see the win, loss, and tie score.
 - I also put 42 div tags inside a parent div tag with the class "board". This is to create the board.
 - There are 42 spots where a token can fit in so that is why I need 42 div tags.
 - I also used a data attribute to make sure each child div tag is specific. This is crucial so the javascript knows when a certain spot is clicked, the proper colored token will appear.
@@ -71,15 +70,31 @@ The objective of the game is the first player to create a line of four from thei
 
 - As I mentioned previously that CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
 - I created a js file called script.js and this is where I will make the game come alive by calling variables, functions, and event listeners.
+
   - **Variables:**
-  1. I created a score variable and a token variable that is linked to the message h2 tag and every div tag with the class of "spot"
-  2. I created a gameRun variable and set it to true so whenever I use functions, I would set the gameRun to false to end the game.
-  3. I created a player variable so I could change players in a function.
-  4. I then created a winningProb variable in an array. In this array, I listed every winning combination in the game.
+
+  1. I created a score variable and a token variable that is linked to a display message h2 tag and every div tag inside the parent div with the class of "board" respectively.
+  2. Then, I created a "restartBtn" variable to link the button tag in the html to js.
+  3. I created a gameRun variable and set it to true so whenever I use functions, I would set the gameRun to false to end the game.
+  4. I then made a player variable set to "red" so I could change players in a function.
+  5. Finally, I created a winningProb variable in an array. In this array, I listed every winning combination of the game.
+
   - **For Loop:**
+
   1.  I needed to make sure that when I click a specific spot, it not only shows a color, but it changes color after each click.
-  2.  To do this, I used a for loop. Inside the for loop, I created an event listener function.
-  3.  Then inside the event listener, I wrote an if statement. The if statment concludes that when a spot is clicked, the color would change to either red or yellow, depending on the player. Then the next click would be the opposite as it is determined that the turn has changed.
+  2.  To do this, I used a "for loop". Inside the "for loop", I created an event listener function called "changeTurns".
+  3.  Then inside the event listener, I wrote 3 if statements.
+
+  - The first if statement concludes that when a circle is clicked, if the circle directly below it contains the class "filled", and the current circle does **not** contain the class "filled", continue to the 2nd if statement. If the conditions do not comply, display a message asking the user to click the right circle.
+  - The second if statement describes that if the variable "player" is equal to "red", change it to "yellow", display a message saying it's yellow's turn, add classes "filled" and "red" to the div, and finally style the background color to red. If player does not equal red, do the exact opposite.
+  - I nested the final if statement inside another "for loop" which is still nested inside the parent function of "changeTurns". This "for loop", loops through the "winningProb" variable that contains every single winning combination.
+
+  - Inside the "for loop", I created four variables. The first variable would represent the first value in one winning array, then the second variable would represent the second value, etc. Since it is in a "for loop", it would go through every winning logic in the parent "winningProb" array.
+    - The final if statement concludes that if the four variables have a background color of "red", display "Red wins!" message. If the four variables have yellow backgrounds, it would display "Yellow wins!".
+
+  4.  The last step would be to create a function that triggers the restart button.
+
+  - Inside that function, I created an event listener that when the button is clicked, the page would refresh. This would then clear the board.
 
 ---
 
