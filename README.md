@@ -52,55 +52,55 @@ The objective of the game is the first player to create a line of four from thei
 - The `Play` message is an `a` tag with a href of `game.html`. Therefore the user can click the play message and it would transfer to the `game.html` so the user can play the Connect 4 game.
 - In the game.html, I had a similar layout where there is a h1 title but this one is called "Connect 4".
 - Then underneath, I put a h2 tag with a message that would show who's turn it would be. With the combination of js, the message changes everytime a player's turn switches.
-- I also put 42 div tags inside a parent div tag with the class "board". This is to create the board.
+- I also put 49 div tags inside a parent div tag with the class `board`. This is to create the board.
 - There are 42 spots where a token can fit in so that is why I need 42 div tags.
-- I also used a data attribute to make sure each child div tag is specific. This is crucial so the javascript knows when a certain spot is clicked, the proper colored token will appear.
-- Finally, I will put a restart button below the board to allow players to restart the game once a game has ended.
+- I put an addition 7 div tags with the class `lowerRow`. This will be below the spots and this is crucial to create the stacking action.
+- Finally, I will put a `restart button` below the board to allow players to restart the game once a game has ended.
 
 #### _CSS_
 
-- A CSS file called styles.css was created. It is needed in order to style up your game. This is where users can see how the game looks like.
-- To style up the index.html, I set the background color to a darker shade of pink. Then for the font colors of the h1, h2, and "a" tag, I used complimentary colors of pink. Then I aligned all the tags in the center of the page.
-- For the game.html file, I set the same background color the same as the index.html. As well as keeping the font color the same with the h1 tag and centering everything.
+- A CSS file called `styles.css` was created. It is needed in order to style up your game. This is where users can see how the game looks like.
+- To style up the index.html, I set the background color to a light gray tone. Then for the font colors of the `h1`, `h2`, and `a` tag, I used complimentary colors of gray. Then I aligned all the tags in the center of the page.
+- For the `game.html` file, I set the same background color the same as the index.html. As well as keeping the font color the same with the h1 tag and centering everything.
 - For the game board, there are 7 columns and 6 rows. So the format I used was:
-  - display as grid
-  - grid-template-column: repeat(7, auto)
-  - grid-template-row: repeat(6, auto)
+  - `display: grid`
+  - `grid-template-column: repeat(7, auto)`
+  - `grid-template-row: repeat(6, auto)`
 - I made the colors the same as what the original connect 4 colors were so I set the background color to blue.
 - For each specific spot, I needed to create a circle so I used border-radius: 50% as well as making sure the width and height are the same size.
-- Then I made sure whenever the cursor is on a spot, the cursor turns into a pointer to indicate that the spot can be clicked.
-- For the message tag, I changed the font color to a dark gold and made sure the font size was a little smaller than the Connect 4 title
-- Lastly, for the restart button, I wanted to make sure the size was a good fit for the board. I also changed the background color to brown so it goes well with the pink background and the font color to white so it is more visible.
+- Then I used `cursor: pointer;` so the user knows they can click the spots.
+- For the message tag, I changed the font color to a light blue.
+- Lastly, for the restart button, I wanted to make sure the size was a good fit for the board. I also changed the background color to red-brown for more visibility.
 
 #### _JavaScript_
 
 - As I mentioned previously that CSS is needed to show people how the game looks like, JavaScript or JS shows how the game operates.
-- I created a js file called script.js and this is where I will make the game come alive by calling variables, functions, and event listeners.
+- I created a js file called `script.js` and this is where I will make the game come alive by calling variables, functions, and event listeners.
 
   - **Variables:**
 
-  1. I created a score variable and a token variable that is linked to a display message h2 tag and every div tag inside the parent div with the class of "board" respectively.
-  2. Then, I created a "restartBtn" variable to link the button tag in the html to js.
-  3. I created a gameRun variable and set it to true so whenever I use functions, I would set the gameRun to false to end the game.
+  1. I created a `score` variable and a `token` variable that is linked to a display message h2 tag and every div tag inside the parent div with the class of "board" respectively.
+  2. Then a `redTally` and `yellowTally` variables to keep track of the winning record.
+  3. Then, I created a `restartBtn` variable to link the button tag in the html to js.
   4. I then made a player variable set to "red" so I could change players in a function.
   5. Finally, I created a winningProb variable in an array. In this array, I listed every winning combination of the game.
 
   - **For Loop:**
 
   1.  I needed to make sure that when I click a specific spot, it not only shows a color, but it changes color after each click.
-  2.  To do this, I used a "for loop". Inside the "for loop", I created an event listener function called "changeTurns".
-  3.  Then inside the event listener, I wrote 3 if statements.
+  2.  To do this, I used a `for loop`. Inside the `for loop`, I created an `event listener`.
+  3.  Then inside the event listener, I wrote 3 `if statements`.
 
-  - The first if statement concludes that when a circle is clicked, if the circle directly below it contains the class "filled", and the current circle does **not** contain the class "filled", continue to the 2nd if statement. If the conditions do not comply, display a message asking the user to click the right circle.
-  - The second if statement describes that if the variable "player" is equal to "red", change it to "yellow", display a message saying it's yellow's turn, add classes "filled" and "red" to the div, and finally style the background color to red. If player does not equal red, do the exact opposite.
-  - I nested the final if statement inside another "for loop" which is still nested inside the parent function of "changeTurns". This "for loop", loops through the "winningProb" variable that contains every single winning combination.
+  - The first `if statement` concludes that when a circle is clicked, if the current circle does **not** contain the class `lowerRow` and the circle directly below it **does** contains the class `lowerRow`, continue to the 2nd `if statement`. If the conditions do not comply, display a message asking the user to click the right circle.
+  - The second `if statement` describes that if the variable `player` is equal to `red`, change it to `yellow`, display a message saying it's yellow's turn, add classes `lowerRow` and `red` to the div, and finally style the background color to red. If player equals to `yellow`, do the exact opposite.
+  - I nested the final `if statement` inside another `for loop` which is still nested inside the parent function of `changeTurns`. This `for loop`, loops through the `winningProb` variable that contains every single winning combination.
 
-  - Inside the "for loop", I created four variables. The first variable would represent the first value in one winning array, then the second variable would represent the second value, etc. Since it is in a "for loop", it would go through every winning logic in the parent "winningProb" array.
-    - The final if statement concludes that if the four variables have a background color of "red", display "Red wins!" message. If the four variables have yellow backgrounds, it would display "Yellow wins!".
+  - Inside the `for loop`, I created four variables. The first variable would represent the first value in one winning array, then the second variable would represent the second value, etc. Since it is in a `for loop`, it would go through every winning logic in the parent `winningProb` array.
+  - The final `if statement` concludes that if the four variables have a background color of "red", display "Red wins!" message. As well as add 1 to the `tallyRed` variable since it is initally set to 0. Then display the numeric value. This is to keep score of who is winning. If the four variables have yellow backgrounds, do the same but for yellow.
 
-  4.  The last step would be to create a function that triggers the restart button.
+  4.  The last step would be to create an `event listener` that triggers the restart button. But still inside the `changeTurns` function.
 
-  - Inside that function, I created an event listener that when the button is clicked, the page would refresh. This would then clear the board.
+  - Inside the `event listener`, when the restart button is clicked, remove the classes `red, yellow, and lowerRow`. Then set the background color to `white`. This allows the game to restart but still keeps the scoring record.
 
 ---
 
