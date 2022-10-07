@@ -53,7 +53,7 @@ main {
 }
 .message {
     position: relative;
-    bottom: 10px;
+    bottom: 20px;
     font-size: 40px;
     color: rgba(15, 146, 194, 0.984);
     padding-top: 25px;
@@ -61,7 +61,9 @@ main {
 #red {
     color: red;
     font-size: 20px;
-    padding-bottom: 10px;
+    position: relative;
+    top: -15px;
+    padding-bottom: 30px;
 }
 
 #yellow {
@@ -69,7 +71,8 @@ main {
     font-size: 20px;
     position: relative;
     bottom: 2px;
-    padding-bottom: 10px;
+    top: -15px;
+    padding-bottom: 30px;
 }
 
 .board {
@@ -83,7 +86,9 @@ main {
     margin: 35px auto;
     border: 5px solid blue;
     background-color: blue;
-    margin-bottom: 30px;
+    padding-top: 6px;
+    position: relative;
+    top: -56px;
 }
 
 .spot {
@@ -109,4 +114,6 @@ main {
     color: white;
     background-color: brown;
     cursor: pointer;
+    position: relative;
+    top: -57px;
 }
