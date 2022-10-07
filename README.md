@@ -33,6 +33,12 @@ The objective of the game is the first player to create a line of four from thei
 
 ## **How to create the game using code**
 
+- `Fork` and `Clone` this repository
+- Open this repo in your code editor
+- Create an `index.html` and another `html` of your choice
+- Create a `style.css` file
+- Create a `script.js` file
+
 ### HTML CSS JS
 
 #### _HTML_
@@ -41,9 +47,9 @@ The objective of the game is the first player to create a line of four from thei
 - You need to use two html files so you can link and navigate through them.
 - In each HTML file, I used a common boilerplate to create a baseline.
 - The index.html is used as a display page to welcome users to my page. There is a play message in the bottom that when clicked, it directs to the game.html where you can play the game
-- For the index.html, or my display page, I made it really simple by adding a title with an h1 tag called "Welcome to my page". Then underneath I wrote a question if the user would like to play Connect 4.
-- Then I created an "a" tag which displays the word "Play". This is crucial in order to link my index.html to my game.html.
-- The "Play" message is an "a" tag with a href of game.html. Therefore the user can click the play message and it would transfer to the game.html so the user can play the Connect 4 game.
+- For the index.html, or my display page, I made it really simple by adding a title with an h1 tag called `Welcome to my page`. Then underneath I wrote a question if the user would like to play Connect 4.
+- Then I created an `a` tag which displays the word `Play`. This is crucial in order to link my `index.html` to my `game.html`.
+- The `Play` message is an `a` tag with a href of `game.html`. Therefore the user can click the play message and it would transfer to the `game.html` so the user can play the Connect 4 game.
 - In the game.html, I had a similar layout where there is a h1 title but this one is called "Connect 4".
 - Then underneath, I put a h2 tag with a message that would show who's turn it would be. With the combination of js, the message changes everytime a player's turn switches.
 - I also put 42 div tags inside a parent div tag with the class "board". This is to create the board.
@@ -103,3 +109,4 @@ The objective of the game is the first player to create a line of four from thei
 [Wikipedia](https://en.wikipedia.org/wiki/Connect_Four)
 [Connect 4 image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaiAwhEY1OPOR-4azXRQVLdszBRXpr10BCw&usqp=CAU)
 [Connect 4 GIF](https://user-images.githubusercontent.com/39765499/56462040-26ef7080-63b4-11e9-8f5a-7f0b4dec216d.gif)
+[MDN: contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains)
