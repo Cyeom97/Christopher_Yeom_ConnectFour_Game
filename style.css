@@ -1,8 +1,10 @@
 body {
-    background-color: rgba(210, 33, 33, 0.18);
+    background-color: rgba(68, 55, 55, 0.18);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
-section {
+main {
     text-align: center;
 }
 
@@ -11,6 +13,7 @@ section {
 .display-title {
     font-size: 60px;
     color:rgb(42, 83, 100);
+    
 }
 
 .display-message {
@@ -29,45 +32,75 @@ section {
 }
 
 /* game.html */
+
+
 .title {
-    font-size: 75px;
+    font-size: 55px;
     margin: 10px auto;
     color: rgb(42, 83, 100);
+}
+
+
+.record {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.message {
+    position: relative;
+    bottom: 10px;
+    font-size: 40px;
+    color: rgba(15, 146, 194, 0.984);
+    padding-top: 25px;
+}
+#red {
+    color: red;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#yellow {
+    color: rgb(255, 255, 0);
+    font-size: 20px;
+    position: relative;
+    bottom: 2px;
+    padding-bottom: 10px;
 }
 
 .board {
     display: grid;
     grid-template-columns: repeat(7,auto);
     grid-template-rows: repeat(6, auto);
-    max-width: 600px;
+    max-width: 470px;
     width: 100%;
     row-gap: 5px;
     line-height: 100px;
-    margin: 30px auto;
+    margin: 35px auto;
     border: 5px solid blue;
     background-color: blue;
+    margin-bottom: 8px;
 }
 
 .spot {
     display: flex;
     column-gap: -10px;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     font-size: 25px;
     border-radius: 50%;
-    border: 1px solid black;
-    margin-right: -30px;
+    border: 4px solid black;
+    margin-left: 5px;
     background-color: white;
     cursor: pointer;
 }
 
-.message {
-    position: relative;
-    bottom: 10px;
-    font-size: 40px;
-    color: rgba(194, 167, 15, 0.984);
-}
+
 
 .restart-game {
     width: 85px;
@@ -75,5 +108,5 @@ section {
     font-size: 16px;
     color: white;
     background-color: brown;
-    
+    cursor: pointer;
 }

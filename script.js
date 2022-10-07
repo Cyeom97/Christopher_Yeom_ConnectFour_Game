@@ -1,7 +1,10 @@
 const score = document.querySelector('.message')
 const token = document.querySelectorAll('.board div')
+const redTally = document.querySelector('.red-scoring')
+const yellowTally = document.querySelector('.yellow-scoring')
 const restartBtn = document.querySelector('.restart-game')
-let gameRun = true
+let tallyRed = 0
+let tallyYellow = 0
 let player = 'red'
 const winningProb = [
   [0, 1, 2, 3],
@@ -83,27 +86,25 @@ const changeTurns = () => {
   for (let i = 0; i < token.length; i++) {
     token[i].addEventListener('click', function () {
       if (
-        // try === instead of contains also try failed attempts
-        token[i + 7].classList.contains('filled') &&
-        !token[i].classList.contains('filled')
+        !token[i].classList.contains('lowerRow') &&
+        token[i + 7].classList.contains('lowerRow')
       ) {
         if (player === 'red') {
           player = 'yellow'
           score.innerHTML = "Yellow's turn"
-          token[i].classList.add('filled')
+          token[i].classList.add('lowerRow')
           token[i].classList.add('red')
           token[i].style.backgroundColor = 'red'
         } else if ((player = 'yellow')) {
           player = 'red'
           score.innerHTML = "Red's turn"
-          token[i].classList.add('filled')
+          token[i].classList.add('lowerRow')
           token[i].classList.add('yellow')
           token[i].style.backgroundColor = 'yellow'
         }
       } else {
         score.innerHTML = 'Did you pick the correct spot?'
       }
-      let winner = false
       for (let a = 0; a < winningProb.length; a++) {
         const zero = token[winningProb[a][0]]
         const one = token[winningProb[a][1]]
@@ -116,10 +117,8 @@ const changeTurns = () => {
           three.style.backgroundColor === 'red'
         ) {
           score.innerHTML = 'Red wins!'
-          token[i].disabled = true
-          winner = true
-          gameRun = false
-          return
+          tallyRed += 1
+          redTally.innerHTML = tallyRed
         } else if (
           zero.style.backgroundColor === 'yellow' &&
           one.style.backgroundColor === 'yellow' &&
@@ -127,21 +126,20 @@ const changeTurns = () => {
           three.style.backgroundColor === 'yellow'
         ) {
           score.innerHTML = 'Yellow wins!'
-          token[i].disabled = true
-          winner = true
-          gameRun = false
-          return
+          tallyYellow += 1
+          yellowTally.innerText = tallyYellow
         }
       }
+      restartBtn.addEventListener('click', function () {
+        token[i].classList.remove('red')
+        token[i].classList.remove('yellow')
+        token[i].classList.remove('lowerRow')
+        token[i].style.backgroundColor = 'white'
+
+        console.log(token[i].classList)
+      })
     })
   }
-  reset()
-}
-// Work on the reset button
-function reset() {
-  restartBtn.addEventListener('click', function () {
-    window.location.reload()
-  })
 }
 
 changeTurns()

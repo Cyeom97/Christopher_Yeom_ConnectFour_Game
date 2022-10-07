@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Connect Four Game</title>
 </head>
 <body>
-    <section>
-        <h1 class="title">Connect 4</h1>
-        <a href="index.html"></a>
-        <h2 class="message"></h2>
+    <main>
+        <div class="container">
+            <h1 class="title">Connect 4</h1>
+            <a href="index.html"></a>
+            
+            <h2 class="message"></h2>
+            <div class="record">
+                <h3 id="red">Red
+                    <div class="red-scoring">
+                </div></h3>
+                <h3 id="yellow">Yellow
+                    <div class="yellow-scoring"></div></h3>
+            </div>
+        </div>
+        
+        
         <div class="board">
             <div class="spot"></div>
             <div class="spot"></div>
@@ -56,17 +68,17 @@
             <div class="spot"></div>
             <div class="spot"></div>
             <div class="spot"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
-            <div class="filled"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
+            <div class="lowerRow"></div>
             
         </div>
         <button class="restart-game">Restart Game</button>
-    </section>
+    </main>
         <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
