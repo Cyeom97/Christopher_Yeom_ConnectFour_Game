@@ -106,7 +106,7 @@ The objective of the game is the first player to create a line of four from thei
 
 ### Credits
 
-[Wikipedia](https://en.wikipedia.org/wiki/Connect_Four)
-[Connect 4 image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaiAwhEY1OPOR-4azXRQVLdszBRXpr10BCw&usqp=CAU)
-[Connect 4 GIF](https://user-images.githubusercontent.com/39765499/56462040-26ef7080-63b4-11e9-8f5a-7f0b4dec216d.gif)
-[MDN: contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains)
+- [Wikipedia](https://en.wikipedia.org/wiki/Connect_Four)
+- [Connect 4 image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaiAwhEY1OPOR-4azXRQVLdszBRXpr10BCw&usqp=CAU)
+- [Connect 4 GIF](https://user-images.githubusercontent.com/39765499/56462040-26ef7080-63b4-11e9-8f5a-7f0b4dec216d.gif)
+- [MDN: contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains)
